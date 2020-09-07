@@ -44,7 +44,7 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            <a href="/home">Home</a>
+            <a href="/">Home</a>
           </Typography>
           {auth && (
             <div>

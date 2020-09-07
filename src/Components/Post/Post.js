@@ -24,7 +24,6 @@ const Post = (props) => {
     const { id, title, body } = props.post;
     const history = useHistory();
     const handleButton = (postId) => {
-        console.log("hello");
         history.push(`/post/${postId}`);
     }
     const postStyle = {
