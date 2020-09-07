@@ -19,7 +19,6 @@ const useStyles = makeStyles({
 });
 
 
-
 const Post = (props) => {
     const classes = useStyles();
     const { id, title, body } = props.post;

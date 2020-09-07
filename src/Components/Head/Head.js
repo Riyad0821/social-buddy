@@ -14,16 +14,9 @@ const useStyles = makeStyles({
 
 const Head = () => {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
     return (
         <div>
-            <BottomNavigation
-                value={value}
-                onChange={(event, newValue) => {
-                    setValue(newValue);
-                }}
-                showLabels
-                className={classes.root}
+            <BottomNavigation className={classes.root}
             >
                 <h1>Social Buddy</h1>
             </BottomNavigation>

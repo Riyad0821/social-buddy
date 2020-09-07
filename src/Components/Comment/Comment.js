@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   img: {
-    height: 90,
-    width: 90,
+    height: 70,
+    width: 70,
     borderRadius: '50%',
     padding: 5
   }
@@ -41,7 +41,7 @@ const Comment = (props) => {
     fetch(url)
       .then(res => res.json())
       .then(data => setImage(data))
-  }, [])
+  })
   //console.log(props.comment);
   return (
     <div>
