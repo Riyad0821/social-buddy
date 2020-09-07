@@ -37,7 +37,7 @@ const Post = (props) => {
             <Card className={classes.root}>
                 <CardActionArea>
                     <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                        <Typography gutterBottom variant="h5" component="h2">
                             Post No: {id}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="h2">

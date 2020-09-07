@@ -9,19 +9,19 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
-  }));
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 const Header = () => {
-    const classes = useStyles();
+  const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -33,8 +33,8 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-    return (
-        <div className={classes.root}>
+  return (
+    <div className={classes.root}>
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
@@ -44,7 +44,7 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-          <a href="/home">Home</a>
+            <a href="/home">Home</a>
           </Typography>
           {auth && (
             <div>
@@ -71,7 +71,7 @@ const Header = () => {
         </Toolbar>
       </AppBar>
     </div>
-    );
+  );
 };
 
 export default Header;

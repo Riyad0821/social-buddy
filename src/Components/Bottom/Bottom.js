@@ -6,7 +6,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 const useStyles = makeStyles({
     root: {
         margin: 20
-        
+
     },
 });
 

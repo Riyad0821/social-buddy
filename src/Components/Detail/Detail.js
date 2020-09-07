@@ -4,18 +4,15 @@ import Comment from '../../Components/Comment/Comment';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { useHistory } from 'react-router-dom';
 import Bottom from '../Bottom/Bottom';
 
 const useStyles = makeStyles({
     root: {
-        margin: 20,
+        margin: 30,
         minHeight: 200,
-        display:'flex'
+        display: 'flex'
 
     },
     media: {
@@ -25,29 +22,29 @@ const useStyles = makeStyles({
 
 const Detail = () => {
     const classes = useStyles();
-    const {postId} = useParams();
-    const [ post, setPost] = useState([]);
-    const [ comment, setComment ] = useState([]);
+    const { postId } = useParams();
+    const [post, setPost] = useState([]);
+    const [comment, setComment] = useState([]);
     useEffect(() => {
         const url = `https://jsonplaceholder.typicode.com/posts/${postId}`
         fetch(url)
-        .then(res => res.json())
-        .then(data => setPost(data))
+            .then(res => res.json())
+            .then(data => setPost(data))
     }, [])
 
     useEffect(() => {
         const url = `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
         fetch(url)
-        .then(res => res.json())
-        .then(data => setComment(data))
+            .then(res => res.json())
+            .then(data => setComment(data))
     }, [])
 
     return (
         <div>
-             <Card className={classes.root}>
+            <Card className={classes.root}>
                 <CardActionArea>
                     <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2" style={{textAlign: 'center', color:'green'}}>
+                        <Typography gutterBottom variant="h5" component="h2" style={{ textAlign: 'center', color: 'green' }}>
                             Post No: {post.id}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="h2">
@@ -60,7 +57,7 @@ const Detail = () => {
                 </CardActionArea>
             </Card>
             {
-                <h2 style={{textAlign: 'center', color:'Blue'}}>Comments</h2>
+                <h2 style={{ textAlign: 'center', color: 'Blue' }}>Comments</h2>
             }
             {
                 comment.map(comment => <Comment comment={comment}></Comment>)
